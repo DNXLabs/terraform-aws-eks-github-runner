@@ -320,6 +320,53 @@ spec:
 
 <!--- BEGIN_TF_DOCS --->
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 3.0 |
+| kubectl | >= 1.9.4 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 3.0 |
+| kubectl | >= 1.9.4 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| cluster\_identity\_oidc\_issuer | The OIDC Identity issuer for the cluster. | `string` | n/a | yes |
+| cluster\_identity\_oidc\_issuer\_arn | The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account. | `string` | n/a | yes |
+| cluster\_name | The name of the cluster. | `string` | n/a | yes |
+| create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
+| enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
+| github\_app\_app\_id | The ID of your GitHub App. This can't be set at the same time as `github_token` | `string` | n/a | yes |
+| github\_app\_installation\_id | The ID of your GitHub App installation. This can't be set at the same time as `github_token` | `string` | n/a | yes |
+| github\_app\_private\_key | The multiline string of your GitHub App's private key. This can't be set at the same time as `github_token` | `string` | n/a | yes |
+| github\_organizations | n/a | <pre>list(object({<br>    name     = string<br>    replicas = number<br>    label    = string<br>  }))</pre> | `[]` | no |
+| github\_repositories | n/a | <pre>list(object({<br>    name     = string<br>    replicas = number<br>    label    = string<br>  }))</pre> | `[]` | no |
+| github\_token | Your chosen GitHub PAT token. This can't be set at the same time as the `github_app_*` | `string` | `""` | no |
+| helm\_chart\_name | GitHub Runner Controller Helm chart name. | `string` | `"actions-runner-controller"` | no |
+| helm\_chart\_release\_name | GitHub Runner Controller Helm chart release name. | `string` | `"actions-runner-controller"` | no |
+| helm\_chart\_repo | GitHub Runner Controller Helm repository name. | `string` | `"https://actions-runner-controller.github.io/actions-runner-controller"` | no |
+| helm\_chart\_version | GitHub Runner Controller Helm chart version. | `string` | `"0.12.2"` | no |
+| mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
+| namespace | GitHub Runner Controller Helm chart namespace which the service will be created. | `string` | `"actions-runner-system"` | no |
+| policy\_arns | n/a | `list(string)` | `[]` | no |
+| service\_account\_name | GitHub runner service account name. | `string` | `"github-actions-runner-controller"` | no |
+| settings | Additional settings which will be passed to the Helm chart values, see https://github.com/actions-runner-controller/actions-runner-controller/blob/master/charts/actions-runner-controller/README.md | `map` | `{}` | no |
+
+## Outputs
+
+No output.
 
 <!--- END_TF_DOCS --->
 
