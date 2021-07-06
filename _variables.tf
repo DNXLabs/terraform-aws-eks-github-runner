@@ -4,6 +4,17 @@ variable "enabled" {
   description = "Variable indicating whether deployment is enabled."
 }
 
+variable "create_iam_role" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether it creates iam role."
+}
+
+variable "service_account_iam_role_arn" {
+  type        = string
+  description = "Variable indicating the iam role arn to be used by the service account."
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the cluster."
