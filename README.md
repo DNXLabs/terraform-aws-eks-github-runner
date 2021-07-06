@@ -346,6 +346,7 @@ spec:
 | cluster\_identity\_oidc\_issuer | The OIDC Identity issuer for the cluster. | `string` | n/a | yes |
 | cluster\_identity\_oidc\_issuer\_arn | The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account. | `string` | n/a | yes |
 | cluster\_name | The name of the cluster. | `string` | n/a | yes |
+| create\_iam\_role | Variable indicating whether it creates iam role. | `bool` | `true` | no |
 | create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
 | enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
 | github\_app\_app\_id | The ID of your GitHub App. This can't be set at the same time as `github_token` | `string` | n/a | yes |
@@ -361,6 +362,7 @@ spec:
 | mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
 | namespace | GitHub Runner Controller Helm chart namespace which the service will be created. | `string` | `"actions-runner-system"` | no |
 | policy\_arns | n/a | `list(string)` | `[]` | no |
+| service\_account\_iam\_role\_arn | Variable indicating the iam role arn to be used by the service account. | `string` | n/a | yes |
 | service\_account\_name | GitHub runner service account name. | `string` | `"github-actions-runner-controller"` | no |
 | settings | Additional settings which will be passed to the Helm chart values, see https://github.com/actions-runner-controller/actions-runner-controller/blob/master/charts/actions-runner-controller/README.md | `map` | `{}` | no |
 
