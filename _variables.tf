@@ -4,6 +4,12 @@ variable "enabled" {
   description = "Variable indicating whether deployment is enabled."
 }
 
+variable "ephemeral_runner" {
+  type        = bool
+  default     = false
+  description = "Variable indicating whether the runner restarts after running jobs."
+}
+
 variable "create_iam_role" {
   type        = bool
   default     = true

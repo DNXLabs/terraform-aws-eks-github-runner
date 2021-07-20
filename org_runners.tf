@@ -12,6 +12,7 @@ spec:
     spec:
       organization: ${each.value.name}
       serviceAccountName: ${var.service_account_name}
+      ephemeral: ${var.ephemeral_runner}
       securityContext:
         fsGroup: 1000
       labels:
