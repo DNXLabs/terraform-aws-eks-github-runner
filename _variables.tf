@@ -6,7 +6,7 @@ variable "enabled" {
 
 variable "ephemeral_runner" {
   type        = bool
-  default     = false
+  default     = true
   description = "Variable indicating whether the runner restarts after running jobs."
 }
 
