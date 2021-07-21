@@ -18,6 +18,7 @@ variable "create_iam_role" {
 
 variable "service_account_iam_role_arn" {
   type        = string
+  default     = ""
   description = "Variable indicating the iam role arn to be used by the service account."
 }
 

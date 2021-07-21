@@ -19,7 +19,7 @@ resource "helm_release" "github_runner" {
 
   set {
     name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-    value = var.service_account_iam_role_arn != null ? var.service_account_iam_role_arn : aws_iam_role.github_runner[0].arn
+    value = var.service_account_iam_role_arn != "" ? var.service_account_iam_role_arn : aws_iam_role.github_runner[0].arn
   }
 
   set {
