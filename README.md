@@ -363,7 +363,7 @@ spec:
 | mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
 | namespace | GitHub Runner Controller Helm chart namespace which the service will be created. | `string` | `"actions-runner-system"` | no |
 | policy\_arns | n/a | `list(string)` | `[]` | no |
-| service\_account\_iam\_role\_arn | Variable indicating the iam role arn to be used by the service account. | `string` | n/a | yes |
+| service\_account\_iam\_role\_arn | Variable indicating the iam role arn to be used by the service account. | `string` | `""` | no |
 | service\_account\_name | GitHub runner service account name. | `string` | `"github-actions-runner-controller"` | no |
 | settings | Additional settings which will be passed to the Helm chart values, see https://github.com/actions-runner-controller/actions-runner-controller/blob/master/charts/actions-runner-controller/README.md | `map` | `{}` | no |
 
