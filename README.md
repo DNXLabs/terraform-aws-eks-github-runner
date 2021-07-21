@@ -349,7 +349,7 @@ spec:
 | create\_iam\_role | Variable indicating whether it creates iam role. | `bool` | `true` | no |
 | create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
 | enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
-| ephemeral\_runner | Variable indicating whether the runner restarts after running jobs. | `bool` | `false` | no |
+| ephemeral\_runner | Variable indicating whether the runner restarts after running jobs. | `bool` | `true` | no |
 | github\_app\_app\_id | The ID of your GitHub App. This can't be set at the same time as `github_token` | `string` | n/a | yes |
 | github\_app\_installation\_id | The ID of your GitHub App installation. This can't be set at the same time as `github_token` | `string` | n/a | yes |
 | github\_app\_private\_key | The multiline string of your GitHub App's private key. This can't be set at the same time as `github_token` | `string` | n/a | yes |
