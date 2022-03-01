@@ -4,7 +4,7 @@ resource "kubectl_manifest" "github_repository_runners" {
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: RunnerDeployment
 metadata:
-  name: ${replace(lower(each.value.name), "/", "-")}-runner-deployment
+  name: ${replace(replace(lower(each.value.name), "/", "-"), "_", "-")}-runner-deployment
   namespace: ${var.namespace}
 spec:
   replicas: ${each.value.replicas}
